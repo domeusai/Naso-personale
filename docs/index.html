@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173c30">
+  <meta name="description" content="La tua collezione privata di profumi, sempre con te e disponibile offline.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Naso Personale">
+  <title>Naso Personale</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="app-frame">
+    <header class="topbar">
+      <a class="brand-lockup" href="./" aria-label="Naso Personale, collezione">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-name">naso <b>personale</b></span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-button export-button" id="export-button" type="button" title="Esporta backup" aria-label="Esporta backup">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 16v4h14v-4"/></svg>
+        </button>
+        <button class="add-button" id="add-button" type="button"><span aria-hidden="true">+</span><span class="add-label">Aggiungi profumo</span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="collection-heading" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-rule"></span> IL TUO ARCHIVIO OLFATTIVO</p>
+          <h1 id="page-title">La tua collezione<span class="heading-period">.</span></h1>
+        </div>
+        <p class="collection-count"><strong id="collection-count">0</strong><span id="count-label"> fragranze</span></p>
+      </section>
+
+      <section class="collection-tools" aria-label="Cerca e filtra la collezione">
+        <label class="search-field">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+          <input id="search-input" type="search" placeholder="Cerca per nome o marca" autocomplete="off" aria-label="Cerca per nome o marca">
+          <kbd class="search-shortcut" aria-hidden="true">⌘ K</kbd>
+        </label>
+        <div class="filter-row">
+          <label class="filter-select-wrap">
+            <span class="filter-caption">Marca</span>
+            <select id="brand-filter" aria-label="Filtra per marca"><option value="">Tutte le marche</option></select>
+          </label>
+          <label class="filter-select-wrap season-filter-wrap">
+            <span class="filter-caption">Stagione</span>
+            <select id="season-filter" aria-label="Filtra per stagione">
+              <option value="">Tutte le stagioni</option>
+              <option>Primavera</option><option>Estate</option><option>Autunno</option><option>Inverno</option>
+            </select>
+          </label>
+          <span class="filter-divider" aria-hidden="true"></span>
+          <div class="segmented-filter" role="group" aria-label="Filtra per momento della giornata">
+            <button type="button" class="segment-button active" data-day="" aria-pressed="true">Tutto</button>
+            <button type="button" class="segment-button" data-day="day" aria-pressed="false">Giorno</button>
+            <button type="button" class="segment-button" data-day="evening" aria-pressed="false">Sera</button>
+          </div>
+          <button type="button" id="favorite-filter" class="favorite-filter" aria-pressed="false" title="Mostra solo i preferiti">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.1-8.8 11-8.8 11s-8.8-5.9-8.8-11A4.7 4.7 0 0 1 12 6a4.7 4.7 0 0 1 8.8 2.7Z"/></svg>
+            <span>Preferiti</span>
+          </button>
+          <button type="button" id="clear-filters" class="clear-filters">Azzera</button>
+        </div>
+      </section>
+
+      <section class="results-meta" aria-live="polite">
+        <span id="results-label">Tutte le fragranze</span>
+        <button type="button" id="import-button" class="text-button">Importa backup</button>
+        <input id="import-input" class="visually-hidden" type="file" accept="application/json,.json">
+      </section>
+
+      <section id="perfume-grid" class="perfume-grid" aria-label="Profumi nella collezione"></section>
+
+      <section id="empty-state" class="empty-state" hidden>
+        <div class="empty-symbol" aria-hidden="true"><span></span></div>
+        <p class="eyebrow">OGNI COLLEZIONE INIZIA DA UN RICORDO</p>
+        <h2>Ancora nessuna fragranza.</h2>
+        <p>Aggiungi il primo profumo e inizia a comporre il tuo archivio personale.</p>
+        <button type="button" class="add-button empty-add-button"><span aria-hidden="true">+</span>Aggiungi il primo profumo</button>
+      </section>
+
+      <section id="no-results" class="no-results" hidden>
+        <h2>Nessuna fragranza trovata.</h2>
+        <p>Prova a cambiare la ricerca o i filtri selezionati.</p>
+        <button type="button" id="no-results-clear" class="text-button">Rimuovi tutti i filtri</button>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span><span class="privacy-dot"></span> PRIVATO, SEMPRE</span>
+      <span>I tuoi dati restano su questo dispositivo</span>
+    </footer>
+  </div>
+
+  <dialog id="editor-dialog" class="editor-dialog">
+    <form id="perfume-form" class="editor-form">
+      <header class="dialog-header">
+        <div>
+          <p class="eyebrow">ARCHIVIO OLFATTIVO</p>
+          <h2 id="editor-title">Nuova fragranza</h2>
+        </div>
+        <button type="button" class="icon-button close-dialog" data-close-editor aria-label="Chiudi scheda">×</button>
+      </header>
+      <div class="editor-scroll">
+        <section class="form-section photo-section">
+          <div id="photo-well" class="photo-well">
+            <img id="photo-preview" alt="Anteprima della foto del profumo" hidden>
+            <div id="photo-placeholder" class="photo-placeholder">
+              <span class="bottle-mark" aria-hidden="true"><i></i></span>
+              <span>Un’immagine per ricordarlo</span>
+            </div>
+            <button type="button" id="remove-photo" class="remove-photo" aria-label="Rimuovi la foto" hidden>×</button>
+          </div>
+          <div class="photo-actions">
+            <label class="photo-action" for="camera-input">Fotocamera<input id="camera-input" type="file" accept="image/*" capture="environment"></label>
+            <label class="photo-action secondary-photo-action" for="library-input">Libreria<input id="library-input" type="file" accept="image/*"></label>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <p class="form-kicker">01 <span>IDENTITÀ</span></p>
+          <div class="field-grid identity-fields">
+            <label class="field"><span>Marca <i>*</i></span><input name="brand" required maxlength="80" autocomplete="organization" placeholder="Es. Diptyque"></label>
+            <label class="field"><span>Nome <i>*</i></span><input name="name" required maxlength="100" placeholder="Es. Philosykos"></label>
+            <label class="field full-field"><span>Famiglia olfattiva</span><select name="family"><option value="">Scegli una famiglia</option><option>Agrumata</option><option>Aromatica</option><option>Chypre</option><option>Floreale</option><option>Fougère</option><option>Legnosa</option><option>Muschiata</option><option>Orientale</option><option>Cuoiata</option><option>Acquatica</option><option>Gourmand</option><option>Oud</option><option>Altra</option></select></label>
+            <label class="field full-field"><span>Accordi principali</span><input name="accords" placeholder="Verde, legnoso, cremoso"></label>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <p class="form-kicker">02 <span>PIRAMIDE OLFATTIVA</span></p>
+          <div class="field-grid">
+            <label class="field"><span>Note di testa</span><textarea name="topNotes" rows="2" placeholder="Le prime note che si sentono"></textarea></label>
+            <label class="field"><span>Note di cuore</span><textarea name="heartNotes" rows="2" placeholder="Il cuore della fragranza"></textarea></label>
+            <label class="field"><span>Note di fondo</span><textarea name="baseNotes" rows="2" placeholder="Le note che restano sulla pelle"></textarea></label>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <p class="form-kicker">03 <span>CARATTERE E MOMENTO</span></p>
+          <div class="field-grid rating-grid">
+            <label class="range-field"><span>Durata <output data-output="longevity">5</output></span><input name="longevity" type="range" min="1" max="10" value="5"></label>
+            <label class="range-field"><span>Scia <output data-output="sillage">5</output></span><input name="sillage" type="range" min="1" max="10" value="5"></label>
+          </div>
+          <fieldset class="choice-group"><legend>Stagioni</legend><div class="choice-grid" data-choice-group="seasons">
+            <label><input type="checkbox" value="Primavera"><span>Primavera</span></label><label><input type="checkbox" value="Estate"><span>Estate</span></label><label><input type="checkbox" value="Autunno"><span>Autunno</span></label><label><input type="checkbox" value="Inverno"><span>Inverno</span></label>
+          </div></fieldset>
+          <label class="field occasion-field"><span>Occasioni</span><input name="occasions" placeholder="Lavoro, tempo libero, serata"></label>
+          <fieldset class="choice-group"><legend>Quando lo indossi</legend><div class="choice-grid time-choices">
+            <label><input name="dayUse" type="checkbox"><span>Di giorno</span></label><label><input name="eveningUse" type="checkbox"><span>Di sera</span></label>
+          </div></fieldset>
+        </section>
+
+        <section class="form-section last-form-section">
+          <p class="form-kicker">04 <span>NOTE PERSONALI</span></p>
+          <label class="field"><span>I tuoi appunti</span><textarea name="personalNotes" rows="3" placeholder="Dove eri, come ti ha fatto sentire…"></textarea></label>
+          <div class="choice-grid personal-choices">
+            <label><input name="isFavorite" type="checkbox"><span>Tra i preferiti</span></label><label><input name="repurchase" type="checkbox"><span>Da ricomprare</span></label>
+          </div>
+        </section>
+      </div>
+      <footer class="dialog-footer">
+        <button type="button" class="text-button delete-button" id="delete-button" hidden>Elimina profumo</button>
+        <span class="footer-spacer"></span>
+        <button type="button" class="cancel-button" data-close-editor>Annulla</button>
+        <button type="submit" class="add-button save-button">Salva scheda</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
