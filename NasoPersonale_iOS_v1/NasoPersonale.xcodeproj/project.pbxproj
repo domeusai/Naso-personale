@@ -1,0 +1,144 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000001 /* ContentView.swift */; };
+		A10000000000000000000002 /* NasoPersonaleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* NasoPersonaleApp.swift */; };
+		A10000000000000000000003 /* Perfume.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000003 /* Perfume.swift */; };
+		A10000000000000000000004 /* PerfumeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* PerfumeStore.swift */; };
+		A10000000000000000000005 /* VisionOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000005 /* VisionOCR.swift */; };
+		A10000000000000000000006 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* CollectionView.swift */; };
+		A10000000000000000000007 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000007 /* FavoritesView.swift */; };
+		A10000000000000000000008 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000008 /* ScanView.swift */; };
+		A10000000000000000000009 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000009 /* SettingsView.swift */; };
+		A1000000000000000000000A /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000A /* DesignSystem.swift */; };
+		A1000000000000000000000B /* PerfumeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000B /* PerfumeEditorView.swift */; };
+		A1000000000000000000000C /* PerfumeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000000000000000000000C /* PerfumeDetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B10000000000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B10000000000000000000002 /* NasoPersonaleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasoPersonaleApp.swift; sourceTree = "<group>"; };
+		B10000000000000000000003 /* Perfume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfume.swift; sourceTree = "<group>"; };
+		B10000000000000000000004 /* PerfumeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeStore.swift; sourceTree = "<group>"; };
+		B10000000000000000000005 /* VisionOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOCR.swift; sourceTree = "<group>"; };
+		B10000000000000000000006 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		B10000000000000000000007 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		B10000000000000000000008 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		B10000000000000000000009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B1000000000000000000000A /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		B1000000000000000000000B /* PerfumeEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeEditorView.swift; sourceTree = "<group>"; };
+		B1000000000000000000000C /* PerfumeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeDetailView.swift; sourceTree = "<group>"; };
+		C10000000000000000000001 /* Naso Personale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Naso Personale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D10000000000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E10000000000000000000001 = {
+			isa = PBXGroup;
+			children = (E10000000000000000000002 /* NasoPersonale */, E10000000000000000000003 /* Products */);
+			sourceTree = "<group>";
+		};
+		E10000000000000000000002 /* NasoPersonale */ = {
+			isa = PBXGroup;
+			children = (B10000000000000000000001 /* ContentView.swift */, B10000000000000000000002 /* NasoPersonaleApp.swift */, E10000000000000000000004 /* Models */, E10000000000000000000005 /* Views */, E10000000000000000000006 /* Services */);
+			path = NasoPersonale;
+			sourceTree = "<group>";
+		};
+		E10000000000000000000003 /* Products */ = {isa = PBXGroup; children = (C10000000000000000000001 /* Naso Personale.app */); name = Products; sourceTree = "<group>"; };
+		E10000000000000000000004 /* Models */ = {isa = PBXGroup; children = (B10000000000000000000003 /* Perfume.swift */); path = Models; sourceTree = "<group>"; };
+		E10000000000000000000005 /* Views */ = {isa = PBXGroup; children = (B10000000000000000000006 /* CollectionView.swift */, B10000000000000000000007 /* FavoritesView.swift */, B10000000000000000000008 /* ScanView.swift */, B10000000000000000000009 /* SettingsView.swift */, B1000000000000000000000A /* DesignSystem.swift */, B1000000000000000000000B /* PerfumeEditorView.swift */, B1000000000000000000000C /* PerfumeDetailView.swift */); path = Views; sourceTree = "<group>"; };
+		E10000000000000000000006 /* Services */ = {isa = PBXGroup; children = (B10000000000000000000004 /* PerfumeStore.swift */, B10000000000000000000005 /* VisionOCR.swift */); path = Services; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F10000000000000000000001 /* NasoPersonale */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F10000000000000000000003 /* Build configuration list for PBXNativeTarget */;
+			buildPhases = (F10000000000000000000002 /* Sources */, D10000000000000000000001 /* Frameworks */, F10000000000000000000006 /* Resources */);
+			buildRules = ();
+			dependencies = ();
+			name = NasoPersonale;
+			productName = "Naso Personale";
+			productReference = C10000000000000000000001 /* Naso Personale.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F10000000000000000000004 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {LastUpgradeCheck = 1600; TargetAttributes = {F10000000000000000000001 = {CreatedOnToolsVersion = 16.0; }; }; };
+			buildConfigurationList = F10000000000000000000005 /* Build configuration list for PBXProject */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = it;
+			hasScannedForEncodings = 0;
+			knownRegions = (it, en, Base);
+			mainGroup = E10000000000000000000001;
+			productRefGroup = E10000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (F10000000000000000000001 /* NasoPersonale */);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F10000000000000000000006 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F10000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (A10000000000000000000001, A10000000000000000000002, A10000000000000000000003, A10000000000000000000004, A10000000000000000000005, A10000000000000000000006, A10000000000000000000007, A10000000000000000000008, A10000000000000000000009, A1000000000000000000000A, A1000000000000000000000B, A1000000000000000000000C);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F10000000000000000000007 /* Project Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Debug; };
+		F10000000000000000000008 /* Project Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Release; };
+		F10000000000000000000009 /* Target Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Naso Personale";
+				INFOPLIST_KEY_NSCameraUsageDescription = "La fotocamera serve per leggere l’etichetta del profumo e salvare una foto nella collezione.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "La libreria foto serve per scegliere un’immagine nel simulatore e aggiungerla alla collezione.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.nasopersonale.app;
+				PRODUCT_NAME = "Naso Personale";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			}; name = Debug; };
+		F1000000000000000000000A /* Target Release */ = {isa = XCBuildConfiguration; buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Naso Personale";
+				INFOPLIST_KEY_NSCameraUsageDescription = "La fotocamera serve per leggere l’etichetta del profumo e salvare una foto nella collezione.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "La libreria foto serve per scegliere un’immagine nel simulatore e aggiungerla alla collezione.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.nasopersonale.app;
+				PRODUCT_NAME = "Naso Personale";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F10000000000000000000003 /* Target configuration list */ = {isa = XCConfigurationList; buildConfigurations = (F10000000000000000000009, F1000000000000000000000A); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		F10000000000000000000005 /* Project configuration list */ = {isa = XCConfigurationList; buildConfigurations = (F10000000000000000000007, F10000000000000000000008); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = F10000000000000000000004 /* Project object */;
+}
